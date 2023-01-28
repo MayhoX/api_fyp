@@ -3,7 +3,7 @@
 $serverhost = "localhost";
 $user = "root";
 $password = "";
-$db = "fyp";
+$db = "database_fyp";
 
 $connectNow = new mysqli($serverhost, $user, $password, $db);
 
