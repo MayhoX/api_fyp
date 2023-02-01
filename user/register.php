@@ -7,7 +7,7 @@ $userEmail = $_POST['User_Email'];
 $userPassword = $_POST['User_Password'];
 
 
-$sql = "INSERT INTO user SET User_Name = '$userName', User_Email = '$userEmail', User_Password = '$userPassword'";
+$sql = "INSERT INTO user SET User_Name = '$userName', User_Email = '$userEmail', User_Password = '$userPassword', User_States ='User'";
 
 $resultOfQuery =  $connectNow -> query($sql);
 

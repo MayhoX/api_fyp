@@ -14,13 +14,25 @@ if($resultOfQuery-> num_rows > 0){
     $userRecord = array();
     while($rowFound = $resultOfQuery->fetch_assoc()){
         $userRecord[] = $rowFound;
+        $states = $rowFound['User_States'];
     }
-    echo json_encode(
-        array(
-            "success"=>true,
-            "userData"=>$userRecord[0],
-        )
-    );
+    
+    $row = $resultOfQuery->fetch_assoc();
+    if ($states == "User"){
+        echo json_encode(
+            array(
+                "success"=>"User",
+                "userData"=>$userRecord[0],
+            )
+        );
+    }elseif($states == "Admin"){
+        echo json_encode(
+            array(
+                "success"=>"Admin",
+                "userData"=>$userRecord[0],
+            )
+        );
+    }
 }else{
     echo json_encode(array("success"=>false));
 }
@@ -32,3 +44,5 @@ if($resultOfQuery-> num_rows > 0){
 
 
 ?>
+
+
