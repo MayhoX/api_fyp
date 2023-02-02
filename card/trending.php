@@ -2,10 +2,10 @@
 
 include '../connection.php';
 
-$minRating = 4;
+$minRating = 1;
 $limitCard = 5;
 
-$sql="SELECT * FROM cards WHERE Card_Rare >= '$minRating' ORDER BY Card_Rare DESC LIMIT $limitCard";
+$sql="SELECT * FROM cards WHERE Card_ID >= '$minRating' ORDER BY Card_ID DESC LIMIT $limitCard";
 
 
 
