@@ -10,9 +10,9 @@ $Qty = $_POST['Qty'];
 $TotalPrice = $_POST['TotalPrice'];
 $Date = $_POST['Date'];
 
-$sql = "INSERT INTO buycard SET BuyCard_SellCardID  = '$SellerID', BuyCard_CardID  = '$CardID', BuyCard_BuyerID  = '$BuyerID'
+$sql = "INSERT INTO buycard SET BuyCard_SellCardID  = '$SellCardID', BuyCard_CardID  = '$CardID', BuyCard_BuyerID  = '$BuyerID'
     , BuyCard_SellerID ='$SellerID' , BuyCard_Qty = '$Qty', BuyCard_TotalPrice =  '$TotalPrice'
-    , BuyCard_Date = '$Date', SellCard_state = 'Order'"; 
+    , BuyCard_Date = '$Date', BuyCard_State = 'Order'"; 
 
 
 
