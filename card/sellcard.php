@@ -10,15 +10,16 @@ $Description = $_POST['Description'];
 $url = $_POST['ImageURL'];
 $Date = $_POST['Date'];
 
+if ($url == ""){
+    $sql = "INSERT INTO sellcard SET Card_ID = '$CardID', SellCard_Seller = '$SellerID', SellCard_Price = '$Price'
+    , SellCard_Qty ='$Qty' , SellCard_Description = '$Description', SellCard_ImageURL =  NULL
+    , SellCard_Date = '$Date', SellCard_state = 'Sell'"; 
+}else{
+    $sql = "INSERT INTO sellcard SET Card_ID = '$CardID', SellCard_Seller = '$SellerID', SellCard_Price = '$Price'
+    , SellCard_Qty ='$Qty' , SellCard_Description = '$Description', SellCard_ImageURL = '$url'
+    , SellCard_Date = '$Date', SellCard_state = 'Sell'"; 
+}
 
-
-
-// $sql = "INSERT INTO sellcard SET Card_ID = '$cardID', SellCard_Seller = '$SellerID', SellCard_Price = '$Price', SellCard_Qty ='$Qty'
-//         , SellCard_Description = '$Description', SellCard_Date = '$Date', SellCard_state = 'Sell'";
-
-$sql = "INSERT INTO sellcard SET Card_ID = '$CardID', SellCard_Seller = '$SellerID', SellCard_Price = '$Price'
-, SellCard_Qty ='$Qty' , SellCard_Description = '$Description', SellCard_ImageURL = '$url'
-, SellCard_Date = '$Date', SellCard_state = 'Sell'"; 
 
 
 $resultOfQuery =  $connectNow -> query($sql);
