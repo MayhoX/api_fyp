@@ -4,7 +4,9 @@ include '../connection.php';
 
 $CardID = $_POST['CardID'];
 
-$sql="SELECT * FROM sellcard WHERE Card_ID = '$CardID'";
+// $sql="SELECT * FROM sellcard WHERE Card_ID = '$CardID'";
+$sql="SELECT * FROM sellcard INNER JOIN user ON sellcard.SellCard_Seller = user.User_ID WHERE Card_ID = '$CardID'";
+ 
 
 $resultOfQuery =  $connectNow -> query($sql);
 
