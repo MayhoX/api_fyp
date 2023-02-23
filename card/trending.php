@@ -5,10 +5,6 @@ include '../connection.php';
 $minRating = 1;
 $limitCard = 5;
 
-// $sql="SELECT * FROM cards WHERE Card_ID >= '$minRating' ORDER BY Card_ID DESC LIMIT $limitCard";
-
-// $sql = "SELECT * FROM `cards` INNER JOIN sellcard ON cards.Card_ID = sellcard.Card_ID GROUP BY sellcard.Card_ID 
-//         HAVING COUNT(sellcard.Card_ID) >= 1 ORDER BY cards.Card_ID DESC LIMIT 5";
 
 
 $sql = "SELECT * FROM `cards` INNER JOIN sellcard ON cards.Card_ID = sellcard.Card_ID GROUP BY sellcard.Card_ID 
